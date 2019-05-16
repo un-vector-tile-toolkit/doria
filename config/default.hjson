@@ -1,9 +1,9 @@
 {
   farmsPath: ./config/farms.js
-  a320Path: /Volumes/easter-egg/320
-  cs100Path: /Volumes/easter-egg/cs100
-  certPath: /Users/hfu/mkcert-pems/127.0.0.1.pem 
-  keyPath: /Users/hfu/mkcert-pems/127.0.0.1-key.pem
+  a320Path: /home/unlb.dpko.un.org/hidenori.fujimura/casale-package/320
+  cs100Path: /home/unlb.dpko.un.org/hidenori.fujimura/casale-package/cs100
+  certPath: /home/unlb.dpko.un.org/hidenori.fujimura/keychain/fullchain.pem 
+  keyPath: /home/unlb.dpko.un.org/hidenori.fujimura/keychain/privkey.pem
   port: 8889
   htdocsPath: htdocs
   stylePath: ../macrostyle/style.json
