@@ -1,0 +1,8 @@
+apps: 
+  - script: index.js
+    name: doria
+    instances: 4
+    exec_mode: cluster
+    env:
+      LD_LIBRARY_PATH: /home/unlb.dpko.un.org/hidenori.fujimura/local/glibc-2.14/lib
+

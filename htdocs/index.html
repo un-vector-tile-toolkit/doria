@@ -1,6 +1,37 @@
 <!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+<link rel="stylesheet" type="text/css" href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css"/>
+<style>
+body { margin: 0; top: 0; bottom: 0; width: 100%; }
+#map { position: absolute; top: 0; bottom: 0; width: 100%; }
+</style>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.js"></script>
+</head>
 <body>
-<h1>doria is up.</h1>
+<div id="map"></div>
+<script>
+map = new mapboxgl.Map({
+  container: 'map', 
+  style: 'style.json', 
+  attributionControl: true, hash: true,
+  localIdeographFontFamily: 'sans'
+})
+map.on('load', function() {
+  map.addControl(new mapboxgl.NavigationControl())
+  map.flyTo({
+    center: [17.94175346, 40.6518003],
+    zoom: 22,
+    bearing: 0,
+    speed: 0.2,
+    curve: 1,
+    easing: function (t) { return t; }
+  })
+})
+</script>
 </body>
 </html>
+

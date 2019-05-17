@@ -10,4 +10,6 @@
   spriteJsonPath: ../unite-sprite/sprite.json
   spritePngPath: ../unite-sprite/sprite.png
   fontsDir: ../fonts
+  templateUrl: https://casale.vectortiles.xyz:8888/zxy/{z}/{x}/{y}.pbf
+  attribution: United Nations and OpenStreetMap contributors
 }
