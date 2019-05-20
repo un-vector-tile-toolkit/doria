@@ -7,8 +7,9 @@
   port: 8889
   htdocsPath: htdocs
   stylePath: ../macrostyle/style.json
-  spriteJsonPath: ../unite-sprite/sprite.json
-  spritePngPath: ../unite-sprite/sprite.png
+  spriteUrl: https://casale.vectortiles.xyz:8888/sprite
+  spriteJsonPath: ./htdocs/sprite.json
+  spritePngPath: ./htdocs/sprite.png
   fontsDir: ../fonts
   templateUrl: https://casale.vectortiles.xyz:8888/zxy/{z}/{x}/{y}.pbf
   attribution: United Nations and OpenStreetMap contributors

@@ -20,6 +20,7 @@ const buildStyle = (stylePath) => {
   let style = require(stylePath)
   style.sources.v.tiles[0] = config.get('templateUrl')
   style.sources.v.attribution = config.get('attribution')
+  style.sprite = config.get('spriteUrl')
   return JSON.stringify(style, null, 2)
 }
 
