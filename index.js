@@ -9,6 +9,8 @@ const vtcomposite = require('@mapbox/vtcomposite')
 const farms = require(config.get('farmsPath'))
 const port = config.get('port')
 const htdocsPath = config.get('htdocsPath')
+const servicePath = config.get('servicePath')
+const resource = fs.readFileSync(config.get('resourcePath'))
 
 const emptyTile = zlib.gzipSync(vtpbf({ features: [] }))
 const etag = 'a'
@@ -108,6 +110,11 @@ app.get(`/zxy/:z/:x/:y.pbf`, async (req, res) => {
 
 app.get('/style.json', async (req, res) => {
   res.send(style)
+})
+
+app.get(servicePath, (req, res) => {
+  res.set('content-type', 'application/json')
+  res.send(resource)
 })
 
 app.listen(port)

@@ -13,4 +13,6 @@
   fontsDir: ../fonts
   templateUrl: https://casale.vectortiles.xyz:8888/zxy/{z}/{x}/{y}.pbf
   attribution: United Nations and OpenStreetMap contributors
+  servicePath: /arcgis/rest/services/doria/VectorTileServer
+  resourcePath: config/resource-min.json
 }
