@@ -9,6 +9,7 @@ const vtcomposite = require('@mapbox/vtcomposite')
 const farms = require(config.get('farmsPath'))
 const port = config.get('port')
 const htdocsPath = config.get('htdocsPath')
+const stylePath = config.get('stylePath')
 const servicePath = config.get('servicePath')
 const resource = fs.readFileSync(config.get('resourcePath'))
 
@@ -26,7 +27,9 @@ const buildStyle = (stylePath) => {
   return JSON.stringify(style, null, 2)
 }
 
-const style = buildStyle(config.get('stylePath'))
+const style = buildStyle(stylePath)
+const root = buildStyle(stylePath)
+// root.sources.v = { type: 'vector', url: '../../' }
 
 const tile2long = (x, z) => {
   return x / 2 ** z * 360 - 180
@@ -112,9 +115,13 @@ app.get('/style.json', async (req, res) => {
   res.send(style)
 })
 
-app.get(servicePath, (req, res) => {
+app.get(servicePath, async (req, res) => {
   res.set('content-type', 'application/json')
   res.send(resource)
+})
+
+app.get(`${servicePath}/resources/styles/root.json`, async (req, res) => {
+  res.send(style)
 })
 
 app.listen(port)
