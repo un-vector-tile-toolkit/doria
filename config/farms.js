@@ -6,7 +6,11 @@ module.exports = {
   a320: { 
     getMbtilesPath: (z, x, y) => {
       if (z < 6) {
-        return `${a320Path}/0-0-0.mbtiles`
+        if (z < 4) {
+          return `${a320Path}/small-world.mbtiles`
+        } else {
+          return `${a320Path}/0-0-0.mbtiles`
+        }
       } else {
         return `${a320Path}/6-${x >> (z - 6)}-${y >> (z - 6)}.mbtiles`
       }
